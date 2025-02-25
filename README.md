@@ -1,5 +1,5 @@
 # **DrivingSim_DeepLearningModel**  
-### **Pedestrian Proximity Risk Classification**  
+### **Pedestrian Threat Detection in Driving Simulations Using CNNs**  
 
 ## **Overview**  
 This deep learning model classifies pedestrian proximity risk based on images captured from a driving simulator. Using pixel-wise labels for objects in the field of view, the model assesses pedestrian risk levels by analyzing the area occupied by pedestrians in each frame.  
