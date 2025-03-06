@@ -1,8 +1,8 @@
 import torch
 import torch.optim as optim
 import torch.nn as nn
-from dataset import load_datasets 
-from model import get_model  
+from notebooks import load_datasets 
+from notebooks import get_model  
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
