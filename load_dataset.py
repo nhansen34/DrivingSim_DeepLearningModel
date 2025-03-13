@@ -14,7 +14,7 @@ from PIL import Image
 import cv2
 
 class PedestrianDataset(Dataset):
-    def __init__(self, dataframe, transform=None):
+    def __init__(self, dataframe, transform=True):
         self.dataframe = dataframe
         self.transform = transform
         self.label_mapping = {"Low": 0, "Medium": 1, "High": 2}

@@ -90,7 +90,7 @@ def main():
     )
     
     # Create logger
-    logger = TensorBoardLogger("lightning_logs", name="pedestrian-risk")
+    logger = TensorBoardLogger("lightning_logs", name="dropout-pedestrian-risk")
     
     # Initialize the Trainer
     trainer = pl.Trainer(
