@@ -1,0 +1,20 @@
+Checkpoint Summary for: checkpoints/pedestrian-cnn-epoch=21-val_loss=0.2839.ckpt
+--------------------------------------------------
+Top-level keys in checkpoint:
+- epoch
+- global_step
+- pytorch-lightning_version
+- state_dict
+- loops
+- callbacks
+- optimizer_states
+- lr_schedulers
+- hparams_name
+- hyper_parameters
+
+Hyperparameters:
+- learning_rate: 0.001
+
+Training Metrics:
+- callbacks: {"EarlyStopping{'monitor': 'val_loss', 'mode': 'min'}": {'wait_count': 1, 'stopped_epoch': 0, 'best_score': tensor(0.2734), 'patience': 5}, "ModelCheckpoint{'monitor': 'val_loss', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}": {'monitor': 'val_loss', 'best_model_score': tensor(0.2734), 'best_model_path': '/gpfs/home/nhansen3/DrivingSimProj/checkpoints/pedestrian-cnn-epoch=20-val_loss=0.2734.ckpt', 'current_score': tensor(0.2839), 'dirpath': '/gpfs/home/nhansen3/DrivingSimProj/checkpoints', 'best_k_models': {'/gpfs/home/nhansen3/DrivingSimProj/checkpoints/pedestrian-cnn-epoch=16-val_loss=0.2986.ckpt': tensor(0.2986), '/gpfs/home/nhansen3/DrivingSimProj/checkpoints/pedestrian-cnn-epoch=20-val_loss=0.2734.ckpt': tensor(0.2734), '/gpfs/home/nhansen3/DrivingSimProj/checkpoints/pedestrian-cnn-epoch=21-val_loss=0.2839.ckpt': tensor(0.2839)}, 'kth_best_model_path': '/gpfs/home/nhansen3/DrivingSimProj/checkpoints/pedestrian-cnn-epoch=16-val_loss=0.2986.ckpt', 'kth_value': tensor(0.2986), 'last_model_path': ''}}
+--------------------------------------------------

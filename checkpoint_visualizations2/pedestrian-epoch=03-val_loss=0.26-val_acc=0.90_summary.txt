@@ -1,0 +1,23 @@
+Checkpoint Summary for: pretrained_scripts/pedestrian_results/checkpoints/pedestrian-epoch=03-val_loss=0.26-val_acc=0.90.ckpt
+--------------------------------------------------
+Top-level keys in checkpoint:
+- epoch
+- global_step
+- pytorch-lightning_version
+- state_dict
+- loops
+- callbacks
+- optimizer_states
+- lr_schedulers
+- hparams_name
+- hyper_parameters
+
+Hyperparameters:
+- num_classes: 3
+- backbone: resnet50
+- pretrained: True
+- learning_rate: 0.0005
+
+Training Metrics:
+- callbacks: {"EarlyStopping{'monitor': 'val_loss', 'mode': 'min'}": {'wait_count': 0, 'stopped_epoch': 0, 'best_score': tensor(0.2560), 'patience': 5}, "ModelCheckpoint{'monitor': 'val_loss', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}": {'monitor': 'val_loss', 'best_model_score': tensor(0.2560), 'best_model_path': '/gpfs/home/nhansen3/DrivingSimProj/pretrained_scripts/pedestrian_results/checkpoints/pedestrian-epoch=03-val_loss=0.26-val_acc=0.90.ckpt', 'current_score': tensor(0.2560), 'dirpath': '/gpfs/home/nhansen3/DrivingSimProj/pretrained_scripts/pedestrian_results/checkpoints', 'best_k_models': {'/gpfs/home/nhansen3/DrivingSimProj/pretrained_scripts/pedestrian_results/checkpoints/pedestrian-epoch=00-val_loss=0.26-val_acc=0.90.ckpt': tensor(0.2597), '/gpfs/home/nhansen3/DrivingSimProj/pretrained_scripts/pedestrian_results/checkpoints/pedestrian-epoch=01-val_loss=0.28-val_acc=0.88.ckpt': tensor(0.2801), '/gpfs/home/nhansen3/DrivingSimProj/pretrained_scripts/pedestrian_results/checkpoints/pedestrian-epoch=03-val_loss=0.26-val_acc=0.90.ckpt': tensor(0.2560)}, 'kth_best_model_path': '/gpfs/home/nhansen3/DrivingSimProj/pretrained_scripts/pedestrian_results/checkpoints/pedestrian-epoch=01-val_loss=0.28-val_acc=0.88.ckpt', 'kth_value': tensor(0.2801), 'last_model_path': ''}}
+--------------------------------------------------

@@ -1,2 +1,10 @@
 DAVID-sim/*
 .ipynb_checkpoints*
+checkpoints/*
+lightning_logs/*
+pretrained_scripts/checkpoints*
+pretrained_scripts/lightning_logs*
+pretrained_scripts/best_pedestrian_model.pth*
+pretrained_scripts/pedestrian_results*
+pretrained_scripts/pedestrian_resnet50_model.pth*
+checkpoint.pth*
