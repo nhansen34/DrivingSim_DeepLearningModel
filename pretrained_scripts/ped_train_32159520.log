@@ -1095,3 +1095,4 @@
         test_acc            0.8997214436531067
         test_loss           0.27644750475883484
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Training completed. Best model saved at: /gpfs/home/nhansen3/DrivingSimProj/pretrained_scripts/pedestrian_results/checkpoints/pedestrian-epoch=11-val_loss=0.24-val_acc=0.91.ckpt
