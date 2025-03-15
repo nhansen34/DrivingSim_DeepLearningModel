@@ -16,22 +16,73 @@ The DAVID data set consists of 28 video sequences of urban driving recorded in t
 - The dataset is preprocessed to extract pedestrian bounding areas and classify risk levels accordingly.  
 
 ## **Methodology**  
-1. **Preprocessing**: Extract pedestrian-related pixel information and normalize image data.  
-2. **Model Architecture**:  
-   - A Convolutional Neural Network (CNN) processes frames to detect pedestrians.  
-   - The model classifies pedestrian risk based on pixel area thresholds.  
-3. **Training & Evaluation**:  
-   - The model is trained on labeled simulation frames.  
-   - Performance is evaluated using accuracy, precision, recall, and F1-score.  
+**Preprocessing**: Extract pedestrian-related pixel information and normalize image data.  
+# Pedestrian Risk Classifier
+
+## Model Architecture
+
+The `PedestrianRiskClassifier` is a PyTorch Lightning implementation designed to classify pedestrian risk levels in images.
+
+### Core Components
+
+#### 1. Object Detection Model
+- Pre-trained Faster R-CNN with ResNet-50 backbone and Feature Pyramid Network (FPN)
+- Configured to detect people (class 1 in COCO dataset)
+- Used to extract pedestrian information from images
+
+#### 2. Feature Extraction Backbone
+- Supports multiple backbone options:
+  - ResNet-50
+  - ResNet-101
+  - EfficientNet-B0
+- Pre-trained on ImageNet (optional)
+- Final classification layer replaced with an Identity layer to use as a feature extractor
+
+#### 3. Classification Components
+- Density-aware classifier that combines visual features with pedestrian density information
+
+### Feature Processing
+
+The model processes images in two parallel streams:
+
+#### Pedestrian Detection Stream
+- Extracts three key pedestrian features:
+  - Normalized pedestrian count (number of pedestrians ÷ 10)
+  - Total pedestrian area ratio (total area of pedestrians ÷ image area)
+  - Average pedestrian size ratio (average pedestrian area ÷ image area)
+- Only considers high-confidence detections (score > 0.7)
+
+#### Visual Feature Stream
+- Processes the whole image through the backbone network
+- Extracts high-level visual features
+
+These two streams are combined and fed into the density features classifier to produce the final risk classification.
+![Risk Classification Confusion Matrix](/assets/visualization_results/v002_0044/activation_heatmap.png)
+![Risk Classification Confusion Matrix](/assets/visualization_results/v002_0044/pedestrian_detection.png)
+### Classification Output
+- Three risk classes: Low, Medium, High
+- Uses cross-entropy loss for training
+
+### Training and Evaluation
+- Implemented using PyTorch Lightning for structured training
+- Includes accuracy metrics for training, validation, and testing
+- Provides detailed evaluation metrics (precision, recall, F1-score) for each risk class
+- Generates confusion matrices for performance visualization
+- Uses Adam optimizer with learning rate scheduler (ReduceLROnPlateau)
 
 ## **Dependencies**  
 **Dependencies include:**  
-- Python 3.x  
+- Python 3.8  
 - PyTorch  
 - OpenCV  
 - NumPy  
 - Pandas  
-- Matplotlib  
+- Matplotlib
+- torch
+- torchvision
+- pytorch-lightning
+- torchmetrics
+- scikit-learn
 
 ## **Results**  
 
